@@ -141,4 +141,8 @@ document.getElementById('sendForm').onsubmit = async (e) => {
       ${summarizeResult(result2, 'User → Platform')}
     </div>
   `;
+    // Activate the easter egg for future attempts
+    if (window.activateMultiTxEasterEgg) {
+      window.activateMultiTxEasterEgg();
+    }
 };
