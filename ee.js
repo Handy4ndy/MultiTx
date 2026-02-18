@@ -58,11 +58,14 @@
         active = true;
         const form = document.getElementById('sendForm');
         if (!form) return;
-        form.onsubmit = function (e) {
-            e.preventDefault();
-            // Madness begins!
-            createPopup();
-        };
+        // Only override if the flag is set
+        if (localStorage.getItem('multiTxEasterEgg') === '1') {
+            form.onsubmit = function (e) {
+                e.preventDefault();
+                // Madness begins!
+                createPopup();
+            };
+        }
     }
 
     // Expose a global to trigger the easter egg after first transaction

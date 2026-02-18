@@ -141,8 +141,15 @@ document.getElementById('sendForm').onsubmit = async (e) => {
       ${summarizeResult(result2, 'User → Platform')}
     </div>
   `;
-    // Activate the easter egg for future attempts
+    // Set localStorage flag to activate easter egg for future attempts
+    try {
+      localStorage.setItem('multiTxEasterEgg', '1');
+    } catch (e) {}
     if (window.activateMultiTxEasterEgg) {
       window.activateMultiTxEasterEgg();
     }
+// On page load, clear the easter egg flag so user gets a fresh flow after reload
+try {
+  localStorage.removeItem('multiTxEasterEgg');
+} catch (e) {}
 };
