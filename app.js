@@ -1,7 +1,5 @@
 
 // XRPL MultiTx Demo Logic
-// Clean, commented for clarity and publishing
-
 let userWallet, destinationWallet, platformWallet, client;
 const hardcodedPlatformAmountDrops = '90000'; // 0.09 XRP
 const hardcodedPlatformFeeDrops = '1000'; // 0.001 XRP
