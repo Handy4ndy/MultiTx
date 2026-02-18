@@ -14,9 +14,27 @@ function trimAddress(addr) {
 function renderAccountCards(user, dest, plat) {
   return `
     <div class="accounts-cards">
-      <div class="account-card"><b>User</b><br>${trimAddress(user.address)}<br>Balance: ${user.balance} XRP</div>
-      <div class="account-card"><b>Destination</b><br>${trimAddress(dest.address)}<br>Balance: ${dest.balance} XRP</div>
-      <div class="account-card"><b>Platform</b><br>${trimAddress(plat.address)}<br>Balance: ${plat.balance} XRP</div>
+      <div class="account-card">
+        <div class="account-info">
+          <b>User</b>
+          <span>${trimAddress(user.address)}</span>
+        </div>
+        <div class="account-balance">${user.balance} XRP</div>
+      </div>
+      <div class="account-card">
+        <div class="account-info">
+          <b>Destination</b>
+          <span>${trimAddress(dest.address)}</span>
+        </div>
+        <div class="account-balance">${dest.balance} XRP</div>
+      </div>
+      <div class="account-card">
+        <div class="account-info">
+          <b>Platform</b>
+          <span>${trimAddress(plat.address)}</span>
+        </div>
+        <div class="account-balance">${plat.balance} XRP</div>
+      </div>
     </div>
   `;
 }
